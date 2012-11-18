@@ -1,0 +1,115 @@
+html {
+  font-family: sans-serif;
+  text-align: center;
+  color: black;
+  background-color: white;
+}
+
+#wrapper {
+  width: 80%;
+  margin: auto;
+}
+
+#head h1 {
+  padding: 0;
+  padding-top: 5px;
+  margin: 0;
+  font-style: italic;
+}
+
+#head .flag_left {
+  color: black;
+  background-color: red;
+  width: 25%;
+  min-height: 3em;
+  float: left;
+}
+#head .flag_mid {
+  color: black;
+  background-color: white;
+  width: 100%;
+  min-height: 3em;
+}
+#head .flag_right {
+  color: black;
+  background-color: green;
+  width: 25%;
+  min-height: 3em;
+  float: right;
+}
+
+#text {
+  color: black;
+  background-color: white;
+  padding-top: 1em;
+}
+
+#footer {
+  color: black;
+  background-color: white;
+  border-top: 1px solid black;
+  font-style: italic;
+  font-size: 80%;
+}
+
+#settings {
+  float: right;
+  width: 15%;
+  text-align: left;
+}
+#min, #max {
+  text-align: right;
+}
+#apply {
+  display: block;
+  float: right;
+}
+
+#challenge {
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+.number {
+  border: none;
+  font-family: serif;
+  font-size: 300%;
+  text-align: center;
+  overflow: visible;
+}
+
+#proposal_box {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+#proposal {
+  font-size: 120%;
+  text-align: center;
+  overflow: visible;
+}
+#solution {
+  border: none;
+  font-size: 80%;
+  color: blue;
+}
+#solution:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.empty {
+  border: none;
+  border-bottom: 1px solid black;
+}
+.wrong {
+  border: none;
+  border-bottom: 1px solid black;
+  border-left: 1ex solid red;
+  border-right: 1ex solid red;
+}
+.correct {
+  border: none;
+  border-bottom: 1px solid black;
+  border-left: 1ex solid green;
+  border-right: 1ex solid green;
+}
