@@ -49,7 +49,7 @@ function getCardinalSolution( num ) {
 	var solution = "";
 
 	solution = getUnderThousandRange( num );
-	num /= 1000;
+	num = Math.floor( num / 1000 );
 
 	while ( num > 0 ) {
 		var lowerRange = num % 1000;
@@ -59,7 +59,7 @@ function getCardinalSolution( num ) {
 			// special case
 			part = ONE_POWER[power];
 		} else if ( lowerRange > 1 ) {
-			part = getUnderTousandRange(lowerRange, new Boolean(true));
+			part = getUnderThousandRange(lowerRange, new Boolean(true));
 			part = part + " " + POWERS[power];
 		} else {
 			// in case of lowerRange == 0 do nothing
@@ -79,7 +79,7 @@ function getCardinalSolution( num ) {
 }
 
 function getUnderThousandRange( num, withAnd ) {
-	var hundreds = Math.floor(num / 100);
+	var hundreds = Math.floor(num / 100) % 10;
 	var tens = Math.floor((num / 10) % 10);
 	var units = num % 10;
 

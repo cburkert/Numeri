@@ -19,7 +19,7 @@ html {
 
 #head .flag_left {
   color: black;
-  background-color: red;
+  background-color: green;
   width: 25%;
   min-height: 3em;
   float: left;
@@ -32,7 +32,7 @@ html {
 }
 #head .flag_right {
   color: black;
-  background-color: green;
+  background-color: red;
   width: 25%;
   min-height: 3em;
   float: right;
