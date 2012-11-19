@@ -134,34 +134,36 @@ function createChallenge() {
 	if ( !ordinal_enabled || Math.random() < 1 - ordinalProb ) {
 		// cardinal
 		solution = getCardinalSolution( number );
-		document.challenge.number.value = number;
+		document.getElementById("challenge").number.value = number;
 	} else {
 		solution = getOrdinalSolution( number );
-		document.challenge.number.value = number + unescape("%B0");
+		document.getElementById("challenge").number.value = number + unescape("%B0");
 	}
 	resetProposal();
-	document.challenge.proposal.focus();
+	var size = solution.length > 20 ? solution.length : 20;
+	document.getElementById("challenge").proposal.setAttribute("size", size);
+	document.getElementById("challenge").proposal.focus();
 }
 
 
 function checkInput( proposal ) {
 	if ( proposal == solution ) {
-		document.challenge.proposal.setAttribute("class", "correct");
+		document.getElementById("challenge").proposal.setAttribute("class", "correct");
 		window.setTimeout("createChallenge()", 1000);
 		return;
 	}
 
 	var sol_prefix = solution.substr(0, proposal.length);
 	if ( sol_prefix != proposal ) {
-		document.challenge.proposal.setAttribute("class", "wrong");
+		document.getElementById("challenge").proposal.setAttribute("class", "wrong");
 	} else {
-		document.challenge.proposal.setAttribute("class", "empty");
+		document.getElementById("challenge").proposal.setAttribute("class", "empty");
 	}
 }
 
 function resetProposal() {
-	document.challenge.proposal.value = "";
-	document.challenge.proposal.setAttribute("class", "empty");
+	document.getElementById("challenge").proposal.value = "";
+	document.getElementById("challenge").proposal.setAttribute("class", "empty");
 }
 
 function sleep( seconds ) {
@@ -173,30 +175,30 @@ function sleep( seconds ) {
 }
 
 function showSolution() {
-	document.challenge.proposal.value = solution;
-	document.challenge.proposal.setAttribute("readonly", "readonly");
-	document.challenge.proposal.removeAttribute("onkeyup");
-	document.challenge.solution.value = "continuare";
-	document.challenge.solution.setAttribute("onclick", "next()");
+	document.getElementById("challenge").proposal.value = solution;
+	document.getElementById("challenge").proposal.setAttribute("readonly", "readonly");
+	document.getElementById("challenge").proposal.removeAttribute("onkeyup");
+	document.getElementById("challenge").solution.value = "continuare";
+	document.getElementById("challenge").solution.setAttribute("onclick", "next()");
 }
 
 function next() {
-	document.challenge.proposal.removeAttribute("readonly");
-	document.challenge.proposal.setAttribute("onkeyup", "checkInput(document.challenge.proposal.value)");
-	document.challenge.solution.value = "Soluzione";
-	document.challenge.solution.setAttribute("onclick", "showSolution()");
+	document.getElementById("challenge").proposal.removeAttribute("readonly");
+	document.getElementById("challenge").proposal.setAttribute("onkeyup", "checkInput(document.getElementById(\"challenge\").proposal.value)");
+	document.getElementById("challenge").solution.value = "Soluzione";
+	document.getElementById("challenge").solution.setAttribute("onclick", "showSolution()");
 	createChallenge();
 }
 
 function applySettings() {
-	min = parseInt(document.settings.min.value);
-	max = parseInt(document.settings.max.value);
-	ordinal_enabled = document.settings.ordinal.checked;
+	min = parseInt(document.getElementById("settings").min.value);
+	max = parseInt(document.getElementById("settings").max.value);
+	ordinal_enabled = document.getElementById("settings").ordinal.checked;
 	if ( isNaN(min) || isNaN(max) ) {
 		alert("Invalid settings " + min + " " + max);
 	} else if ( min > max ) {
 		alert("Min is greater than max!");
 	} else {
-		createChallenge();
+		next();
 	}
 }

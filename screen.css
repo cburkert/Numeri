@@ -75,7 +75,6 @@ html {
   font-family: serif;
   font-size: 300%;
   text-align: center;
-  overflow: visible;
 }
 
 #proposal_box {
@@ -85,7 +84,6 @@ html {
 #proposal {
   font-size: 120%;
   text-align: center;
-  overflow: visible;
 }
 #solution {
   border: none;
