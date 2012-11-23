@@ -48,8 +48,13 @@ function getCardinalSolution( num ) {
 	var power = 0;
 	var solution = "";
 
-	solution = getUnderThousandRange( num );
-	num = Math.floor( num / 1000 );
+	var overthousand = Math.floor( num / 1000 );
+	if ( overthousand == 0 || num % 1000 != 0 ) {
+		solution = getUnderThousandRange( num );
+	} else {
+		solution = "";
+	}
+	num = overthousand;
 
 	while ( num > 0 ) {
 		var lowerRange = num % 1000;
@@ -87,7 +92,9 @@ function getUnderThousandRange( num, withAnd ) {
 	var tstring = "";
 	var ustring = "";
 
-	if ( tens < 2 ) {
+	if ( hundreds > 0 && tens == 0 && units == 0 ) {
+		return hstring;
+	} else if ( tens < 2 ) {
 		var ustring = IRREG[num % 100];
 	} else {
 		tstring = TENNER[tens];
@@ -190,6 +197,16 @@ function next() {
 	createChallenge();
 }
 
+function getMagnitudeOrder( max ) {
+	var magnitude = 0;
+	max = Math.floor( max / 1000 );
+	while ( max > 0 ) {
+		magnitude++;
+		max = Math.floor( max / 1000 );
+	}
+	return magnitude;
+}
+
 function applySettings() {
 	min = parseInt(document.getElementById("settings").min.value);
 	max = parseInt(document.getElementById("settings").max.value);
@@ -198,6 +215,8 @@ function applySettings() {
 		alert("Invalid settings " + min + " " + max);
 	} else if ( min > max ) {
 		alert("Min is greater than max!");
+	} else if ( getMagnitudeOrder(max) > POWERS.length ) {
+		alert("Numbers greater than '" + POWERS[POWERS.length-1] + "' are not supported.");
 	} else {
 		next();
 	}
