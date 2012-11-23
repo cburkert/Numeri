@@ -111,3 +111,9 @@ html {
   border-left: 1ex solid green;
   border-right: 1ex solid green;
 }
+
+noscript {
+  margin: 1em;
+  color: red;
+  background-color: white;
+}
