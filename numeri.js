@@ -219,9 +219,11 @@ function applySettings() {
 	max = parseInt(document.getElementById("settings").max.value);
 	ordinal_enabled = document.getElementById("settings").ordinal.checked;
 	if ( isNaN(min) || isNaN(max) ) {
-		alert("Invalid settings " + min + " " + max);
+		alert("Invalid settings:\nEnter numbers!");
+	} else if ( min < 0 || max < 0 ) {
+		alert("Invalid settings:\nEnter positive numbers!");
 	} else if ( min > max ) {
-		alert("Min is greater than max!");
+		alert("Invalid setting:\nMax has to be greater than Min!");
 	} else if ( getMagnitudeOrder(max) > POWERS.length ) {
 		alert("Numbers greater than '" + POWERS[POWERS.length-1] + "' are not supported.");
 	} else {
