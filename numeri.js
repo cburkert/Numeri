@@ -192,15 +192,13 @@ function showSolution() {
 	document.getElementById("challenge").proposal.setAttribute("class", "empty");
 	document.getElementById("challenge").proposal.setAttribute("readonly", "readonly");
 	document.getElementById("challenge").proposal.removeAttribute("onkeyup");
-	document.getElementById("challenge").solution.value = "continuare";
-	document.getElementById("challenge").solution.setAttribute("onclick", "next()");
+	document.getElementById("solution").setAttribute("class", "hidden");
 }
 
 function next() {
+	document.getElementById("solution").removeAttribute("class");
 	document.getElementById("challenge").proposal.removeAttribute("readonly");
 	document.getElementById("challenge").proposal.setAttribute("onkeyup", "checkInput(document.getElementById(\"challenge\").proposal.value)");
-	document.getElementById("challenge").solution.value = "Soluzione";
-	document.getElementById("challenge").solution.setAttribute("onclick", "showSolution()");
 	createChallenge();
 }
 

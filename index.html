@@ -47,7 +47,10 @@
 					<div id="proposal_box">
 						<input name="proposal" id="proposal" type="text" class="empty" onkeyup="checkInput(this.value)" />
 						<br />
-						<input name="solution" id="solution" type="button" value="Soluzione" onclick="showSolution()" />
+						<span id="navigation">
+							<span id="solution"><a href="javascript:showSolution()">soluzione</a> |</span>
+							<a href="javascript:next()">altro</a>
+						</span>
 					</div>
 				</form>
 				<noscript>
