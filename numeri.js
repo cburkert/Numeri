@@ -187,16 +187,9 @@ function resetProposal() {
 	document.getElementById("challenge").proposal.setAttribute("class", "empty");
 }
 
-function sleep( seconds ) {
-	var now = (new Date).getTime();
-	var then = now + ( seconds * 1000 );
-	while ( now < then ) {
-		now = (new Date).getTime();
-	}
-}
-
 function showSolution() {
 	document.getElementById("challenge").proposal.value = solution;
+	document.getElementById("challenge").proposal.setAttribute("class", "empty");
 	document.getElementById("challenge").proposal.setAttribute("readonly", "readonly");
 	document.getElementById("challenge").proposal.removeAttribute("onkeyup");
 	document.getElementById("challenge").solution.value = "continuare";
