@@ -17,26 +17,47 @@ h1 {
   font-style: italic;
 }
 
+
+/* Language independant header */
 #head .flag_left {
-  color: black;
-  background-color: green;
   width: 25%;
   min-height: 3em;
   float: left;
 }
 #head .flag_mid {
-  color: black;
-  background-color: white;
   width: 100%;
   min-height: 3em;
 }
 #head .flag_right {
-  color: black;
-  background-color: red;
   width: 25%;
   min-height: 3em;
   float: right;
 }
+
+
+/* Language dependant header */
+#italian .flag_left {
+  color: black;
+  background-color: green;
+}
+#italian .flag_right {
+  color: black;
+  background-color: red;
+}
+#italian .flag_mid {
+  color: black;
+  background-color: white;
+}
+
+#spanish .flag_left, .flag_right {
+  color: white;
+  background-color: red;
+}
+#spanish .flag_mid {
+  color: black;
+  background-color: yellow;
+}
+
 
 #text {
   color: black;
