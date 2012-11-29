@@ -56,8 +56,16 @@ function getCardinalSolution( num ) {
 			// special case
 			part = ONE_POWER[power];
 		} else if ( lowerRange > 1 ) {
-			part = getUnderThousandRange(lowerRange, new Boolean(true));
-			part = part + " " + POWERS[power];
+			part = getUnderThousandRange(lowerRange);
+			if ( power == 0 ) {
+				// no blank before "mila"
+				// you don't drop doubled vowels here
+				// http://en.allexperts.com/q/Italian-Language-1584/2012/4/numbers.htm
+				// http://www.orbilat.com/Languages/Italian/Grammar/Italian-Numerals.html
+				part = part + POWERS[power];
+			} else {
+				part = part + " " + POWERS[power];
+			}
 		} else {
 			// in case of lowerRange == 0 do nothing
 			part = "";
@@ -65,6 +73,9 @@ function getCardinalSolution( num ) {
 
 		if ( solution == "" ) {
 			solution = part;
+		} else if ( part != "" && power == 0 ) {
+			// no blank after "mille" and "mila"
+			solution = part + solution;
 		} else if ( part != "" ) {
 			solution = part + " " + solution;
 		}
@@ -75,7 +86,7 @@ function getCardinalSolution( num ) {
 	return solution
 }
 
-function getUnderThousandRange( num, withAnd ) {
+function getUnderThousandRange( num ) {
 	var hundreds = Math.floor(num / 100) % 10;
 	var tens = Math.floor((num / 10) % 10);
 	var units = num % 10;
