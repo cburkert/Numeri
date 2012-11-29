@@ -14,9 +14,8 @@ var HUNDREDS = new Array("", "ciento", "doscientos", "trescientos", "cuatrocient
 var POWERS = new Array("mil", "millones", "mil millones");
 var ONE_POWER = new Array("mil", "un millón", "mil millones");
 
-var ORDINAL = new Array("", "primo", "secondo", "terzo", "quarto", "quinto", "sesto", "settimo", "ottavo", "nono", "decisimo" );
+//var ORDINAL = new Array("", "primo", "secondo", "terzo", "quarto", "quinto", "sesto", "settimo", "ottavo", "nono", "decisimo" );
 
-var VOWELS = "aeiou";
 
 
 function getCardinalSolution( num ) {

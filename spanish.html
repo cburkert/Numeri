@@ -23,25 +23,27 @@
 				<div class="flag_left"></div>
 				<div class="flag_right"></div>
 				<div class="flag_mid">
-					<h1>Los números y I numeri e ordinali italiani</h1>
+					<h1>Los números españoles</h1>
 				</div>
 			</div> <!-- end head -->
 		
 			<div id="text">
 				<form id="settings" action="">
 					<fieldset>
-					<legend>Settings</legend>
+					<legend>Ajustes:</legend>
 					<label for="min">Min: </label>
 					<input name="min" id="min" type="text" size="8" value="0" /><br />
 					<label for="max">Mix: </label>
 					<input name="max" id="max" type="text" size="8" value="100" /><br />
-					<label for="ordinal">Ordinali: </label>
-					<input name="ordinal" id="ordinal" type="checkbox" value="on" /><br />
-					<input name="apply" id="apply" type="button" value="applicare" onclick="applySettings()" />
+					<!--
+					<label for="ordinal">Ordinales: </label>
+					<input name="ordinal" id="ordinal" type="checkbox" value="on" disabled="disabled" /><br />
+					-->
+					<input name="apply" id="apply" type="button" value="aplicar" onclick="applySettings()" />
 					</fieldset>
 				</form>
 				<form id="challenge" action="">
-					<h2>Come si scrive questo numero?</h2>
+					<h2>¿Cómo se llama esto número en español?</h2>
 					<div id="number_box">
 						<input name="number" class="number" type="text" readonly="readonly" />
 					</div>
@@ -49,13 +51,13 @@
 						<input name="proposal" id="proposal" type="text" class="empty" onkeyup="checkInput(this.value)" />
 						<br />
 						<span id="navigation">
-							<span id="solution"><a href="javascript:showSolution()">soluzione</a> |</span>
-							<a href="javascript:next()">altro</a>
+							<span id="solution"><a href="javascript:showSolution()">solución</a> |</span>
+							<a href="javascript:next()">otro</a>
 						</span>
 					</div>
 				</form>
 				<noscript>
-					<p>Attivi javascript per favore!</p>
+					<p>Active javascript por favor!</p>
 				</noscript>
 			</div> <!-- end text -->
 		

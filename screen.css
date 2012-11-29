@@ -49,13 +49,15 @@ h1 {
   background-color: white;
 }
 
-#spanish .flag_left, .flag_right {
+#spanish .flag_left, #spanish .flag_right {
   color: white;
   background-color: red;
+  min-height: 3em;
 }
 #spanish .flag_mid {
   color: black;
   background-color: yellow;
+  min-height: 3em;
 }
 
 
