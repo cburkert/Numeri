@@ -142,6 +142,10 @@ h1 {
   padding-right: 2ex;
 }
 
+#acknowledgement a {
+  display: inline;
+}
+
 .empty {
   border: none;
   border-bottom: 1px solid black;
