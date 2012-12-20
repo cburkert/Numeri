@@ -38,11 +38,11 @@ h1 {
 /* Language dependant header */
 #italian .flag_left {
   color: black;
-  background-color: green;
+  background-color: rgb(0,146, 70);
 }
 #italian .flag_right {
   color: black;
-  background-color: red;
+  background-color: rgb(206, 43, 55);
 }
 #italian .flag_mid {
   color: black;
@@ -51,12 +51,12 @@ h1 {
 
 #spanish .flag_left, #spanish .flag_right {
   color: white;
-  background-color: red;
+  background-color: #c60b1e;
   min-height: 3em;
 }
 #spanish .flag_mid {
   color: black;
-  background-color: yellow;
+  background-color: #ffc400;
   min-height: 3em;
 }
 
@@ -119,6 +119,27 @@ h1 {
 }
 #navigation a:hover {
   text-decoration: underline;
+}
+
+#selection ul {
+  width: 40%;
+  margin: auto;
+  font-size: 200%;
+  text-align: left;
+}
+#selection li {
+  list-style-type: none;
+  margin: 1ex;
+}
+#selection a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  padding: 1ex;
+}
+#selection img {
+  vertical-align: middle;
+  padding-right: 2ex;
 }
 
 .empty {
